@@ -1,3 +1,15 @@
 %h1 iTunes Store bookmarker
 %br
 = render "form"
+%ul#myTab.nav.nav-tabs
+  %li=link_to "Search results", "#tab1", "data-toggle" => "tab"
+  %li=link_to "Favorites", "#tab2", "data-toggle" => "tab"
+%div#myTabContent.tab-content
+  %div#tab1.tab-pane.fade
+    %ul#search_results
+  %div#tab2.tab-pane.fade
+    %ul#faves
+      %li fire
+      %li earth
+      %li air
+      %li water
