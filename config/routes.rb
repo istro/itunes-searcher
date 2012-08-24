@@ -1,5 +1,6 @@
 Tapjoy::Application.routes.draw do
   
+  
   root :to => "search#new"
   
   # The priority is based upon order of creation:
