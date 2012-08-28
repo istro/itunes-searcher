@@ -14,3 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require_tree .
+
+// Prevent loading soundManager on window load
+// window.SM2_DEFER = true;

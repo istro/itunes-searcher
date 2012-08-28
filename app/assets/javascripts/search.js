@@ -1,13 +1,15 @@
 $(function(){
 
   var parseResponse = function(response) {
-    results = response["results"]
-    for(i=0; results.length; i++) {
-      var name = "<li>"+results[i]["trackName"]+"</li>";
+    list_of_results = "";
+    results = response["results"];
+    for(i=0; i < results.length; i++) {
+      var name = "<li><div>"+results[i]["trackName"]+"</div></li>";
       console.log(name);
-      $("#search_results").prepend(name)
-    }
-    console.log(results.length)
+      list_of_results += name
+    };
+    $("#search_results").html(list_of_results);
+    loadSoundManager();
     console.log('all your base are belong to us')
   };
 
@@ -33,5 +35,19 @@ $(function(){
   })
 
   $('#myTab a:first').tab('show');
-  
+
+var loadSoundManager = function() {
+  soundManager = new SoundManager();
+
+  window.SoundManager = SoundManager; // constructor
+  window.soundManager = soundManager; // public API, flash callbacks etc.
+
+  soundManager.setup({
+    url: '/swf/',
+    flashVersion: 9,
+    useFlashBlock: false, 
+    onready: function() {}
+  });
+}
+
 });
