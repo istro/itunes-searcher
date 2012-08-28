@@ -6,10 +6,20 @@
   %li=link_to "Favorites", "#tab2", "data-toggle" => "tab"
 %div#myTabContent.tab-content
   %div#tab1.tab-pane.fade
-    %div#search_results
+    %table
+      %thead
+        %th{style: "width: 10%"}
+        %th.name Song Name
+        %th.album Album
+        %th.artist Artist
+        %th.fav Add to favorites
+      %tbody#search_results
   %div#tab2.tab-pane.fade
-    %ul#faves
-      %li fire
-      %li earth
-      %li air
-      %li water
+    %table
+      %thead
+        %th{style: "width: 10%"}
+        %th.name Song Name
+        %th.album Album
+        %th.artist Artist
+        %th.fav Add to favorites
+      %tbody#faves

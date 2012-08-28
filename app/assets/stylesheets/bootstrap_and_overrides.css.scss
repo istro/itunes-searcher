@@ -6,8 +6,11 @@ body { padding-top: 40px; }
   background-color: white;
 }
 
-#search_results {
-  list-style: none;
+#search_results, th, td {
+  margin-left: 10px;
+  padding-right: 70px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .well {
@@ -17,10 +20,4 @@ body { padding-top: 40px; }
 
 .row {
   display: inline;
-}
-
-.name {
-  font-size: 1.4em;
-  font-weight: 700;
-  margin-left: 80px;
 }
