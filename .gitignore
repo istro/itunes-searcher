@@ -13,3 +13,7 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# ignore finder index files
+.DS_Store
+/public/.DS_Store

@@ -4,12 +4,15 @@ $(function(){
     list_of_results = "";
     results = response["results"];
     for(i=0; i < results.length; i++) {
-      var name = "<li><div>"+results[i]["trackName"]+"</div></li>";
-      console.log(name);
-      list_of_results += name
+      // soundManager.createSound(results[i]["trackId"], results[i]["previewUrl"]);
+      var song = '<li><span><div class="ui360"><a href="'+results[i]["previewUrl"]+'"></a></div><div>'+results[i]["trackName"]+'</div><span></li>';
+      console.log(song);
+      list_of_results += song
     };
     $("#search_results").html(list_of_results);
-    loadSoundManager();
+    console.log('results served');
+    threeSixtyPlayer = new ThreeSixtyPlayer();
+    soundManager.onready(threeSixtyPlayer.init);
     console.log('all your base are belong to us')
   };
 
@@ -36,18 +39,8 @@ $(function(){
 
   $('#myTab a:first').tab('show');
 
-var loadSoundManager = function() {
-  soundManager = new SoundManager();
-
-  window.SoundManager = SoundManager; // constructor
-  window.soundManager = soundManager; // public API, flash callbacks etc.
-
-  soundManager.setup({
-    url: '/swf/',
-    flashVersion: 9,
-    useFlashBlock: false, 
-    onready: function() {}
+  $("#myTabContent").click(function () {
+    alert("ready!");
   });
-}
 
 });

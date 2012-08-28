@@ -30,9 +30,6 @@
  * Also, as you may note: Whoa, reliable cross-platform/device audio support is hard! ;)
  */
 
-
-window.SM2_DEFER = true;
-
 (function(window) {
 
 var soundManager = null;
@@ -477,9 +474,8 @@ function SoundManager(smURL, smID) {
     if (!_tO.serverURL && _tO.autoPlay) {
       oSound.play();
     }
-
+    console.log("sound created")
     return oSound;
-
   };
 
   /**
@@ -5451,5 +5447,25 @@ function SoundManager(smURL, smID) {
   }
 
 } // SoundManager()
+
+// SM2_DEFER details: http://www.schillmania.com/projects/soundmanager2/doc/getstarted/#lazy-loading
+
+if (typeof SM2_DEFER === 'undefined' || !SM2_DEFER) {
+  soundManager = new SoundManager();
+  soundManager.setup({
+    url: '/swf/',
+    flashVersion: 9,
+    useFlashBlock: false, 
+    onready: function() {}
+  });
+}
+
+/**
+ * SoundManager public interfaces
+ * ------------------------------
+ */
+
+window.SoundManager = SoundManager; // constructor
+window.soundManager = soundManager; // public API, flash callbacks etc.
 
 }(window));
