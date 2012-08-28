@@ -5,7 +5,7 @@ $(function(){
     results = response["results"];
     for(i=0; i < results.length; i++) {
       // soundManager.createSound(results[i]["trackId"], results[i]["previewUrl"]);
-      var song = '<li><span><div class="ui360"><a href="'+results[i]["previewUrl"]+'"></a></div><div>'+results[i]["trackName"]+'</div><span></li>';
+      var song = '<div class="row"><li><div class="ui360"><a href="'+results[i]["previewUrl"]+'"></a></div><div class="name">'+results[i]["trackName"]+'</div><div class="fav"><img src="images/star.svg"</div></li></div>';
       console.log(song);
       list_of_results += song
     };
@@ -38,9 +38,5 @@ $(function(){
   })
 
   $('#myTab a:first').tab('show');
-
-  $("#myTabContent").click(function () {
-    alert("ready!");
-  });
 
 });

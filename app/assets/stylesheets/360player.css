@@ -176,15 +176,16 @@
 
 .ui360 .sm2-360btn-default:hover,
 .ui360 .sm2-360ui.sm2_paused .sm2-360btn:hover {
- background:transparent url(360-button-play-light.png) no-repeat 50% 50%;
- _background:transparent url(360-button-play.gif) no-repeat 50% 50%;
+ backgroundd-image: url(360-button-play-light.png) no-repeat 50% 50%;
+ _background-image: url(360-button-play.gif) no-repeat 50% 50%;
  cursor:pointer;
 }
 
 .ui360 .sm2-360ui.sm2_playing .sm2-360btn:hover,
 .ui360 .sm2-360btn-playing:hover {
- background:transparent url(360-button-pause-light.png) no-repeat 50% 50%;
- _background:transparent url(360-button-pause-light.gif) no-repeat 50% 50%;
+ background-image: url(360-button-pause-light.png) no-repeat 50% 50%;
+ _background-image: url(360-button-pause-light.gif) no-repeat 50% 50%;
+ visibility: visible;
  cursor:pointer;
 }
 
